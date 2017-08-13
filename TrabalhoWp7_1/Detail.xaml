@@ -8,34 +8,39 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Pivot Title="Produtos">
-            <PivotItem Header="Produto 1">
-                <Grid>
-                    <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
-                    <Border HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" Width="200" Margin="0,60" BorderBrush="#ccc" BorderThickness="2">
-                        <Image>
-                            <Image.Source>
-                                <BitmapImage UriSource="http://www.leitecamponesa.com.br/wp-content/uploads/2015/08/produtos-leite-condensado-350x263.png"></BitmapImage>
-                            </Image.Source>
-                        </Image>
-                    </Border>
-                    <StackPanel Margin="20,280,0,153">
-                        <StackPanel Orientation="Horizontal" Height="40">
-                            <TextBlock Text="Nome:" FontWeight="Bold" Width="62" FontSize="18" VerticalAlignment="Center"></TextBlock>
-                            <TextBlock Text="Produto 1" Foreground="#FF5C4646" FontSize="18" VerticalAlignment="Center"></TextBlock>
+        <Pivot ItemsSource="{Binding}">
+            <Pivot.HeaderTemplate>
+                <DataTemplate x:DataType="local:Item">
+                    <Grid>
+                        <TextBlock Text="{x:Bind Name}"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </Pivot.HeaderTemplate>
+            <Pivot.ItemTemplate>
+                <DataTemplate x:DataType="local:Item">
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="{x:Bind Name}" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+                        <Border HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" Width="200" Margin="0,60" BorderBrush="#ccc" BorderThickness="2">
+                            <Image>
+                                <Image.Source>
+                                    <BitmapImage UriSource="{x:Bind ImageUrl}"></BitmapImage>
+                                </Image.Source>
+                            </Image>
+                        </Border>
+                        <StackPanel Margin="20,280,0,153">
+                            <StackPanel Orientation="Horizontal" Height="40">
+                                <TextBlock Text="Valor:" FontWeight="Bold" Width="55" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Text="R$32,10" Foreground="#FF5C4646" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="40">
+                                <TextBlock Text="Descrição:" FontWeight="Bold" Width="90" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Text="{x:Bind Description}" Foreground="#FF5C4646" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                            </StackPanel>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Height="40">
-                            <TextBlock Text="Valor:" FontWeight="Bold" Width="55" FontSize="18" VerticalAlignment="Center"></TextBlock>
-                            <TextBlock Text="R$32,10" Foreground="#FF5C4646" FontSize="18" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Height="40">
-                            <TextBlock Text="Descrição:" FontWeight="Bold" Width="90" FontSize="18" VerticalAlignment="Center"></TextBlock>
-                            <TextBlock Text="Um produto bem legal" Foreground="#FF5C4646" FontSize="18" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                    </StackPanel>
-                    <Button Content="Editar produto" HorizontalAlignment="Center" Margin="0,380,0,0" Background="#FF286090" Foreground="White"/>
-                </Grid>
-            </PivotItem>
+                        <Button Content="Editar produto" HorizontalAlignment="Center" Margin="0,380,0,0" Background="#FF286090" Foreground="White"/>
+                    </Grid>
+                </DataTemplate>
+            </Pivot.ItemTemplate>
         </Pivot>
     </Grid>
 </Page>

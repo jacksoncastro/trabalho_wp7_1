@@ -10,7 +10,7 @@ namespace TrabalhoWp7_1
     {
         public Item() {}
 
-        public Item(int Id, String ImageUrl, String Name)
+        public Item(int Id, String ImageUrl, String Name, Double Value, String Description)
         {
             this.Id = Id;
             this.ImageUrl = ImageUrl;
@@ -25,7 +25,7 @@ namespace TrabalhoWp7_1
 
         public String Name { get; set; }
 
-        public String Value { get; set; }
+        public Double Value { get; set; }
 
         public String Description { get; set; }
     }
