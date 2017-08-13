@@ -8,6 +8,25 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <ListView Height="100"
+          ScrollViewer.HorizontalScrollMode="Enabled" 
+          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+          ScrollViewer.VerticalScrollMode="Disabled"
+          ScrollViewer.VerticalScrollBarVisibility="Hidden"
+          ItemsSource="{Binding}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:Item">
+                    <StackPanel>
+                        <TextBlock Text="{x:Bind Name}"/>
+                        <HyperlinkButton Content="{x:Bind ImageUrl}" Click="GoToItem" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

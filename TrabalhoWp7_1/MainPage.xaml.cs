@@ -1,17 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+using System.Collections.ObjectModel;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // O modelo de item de Página em Branco está documentado em https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x416
 
@@ -24,7 +14,23 @@ namespace TrabalhoWp7_1
     {
         public MainPage()
         {
+
             this.InitializeComponent();
+
+
+            var Items = new ObservableCollection<Item>() {
+                new Item(1, "Flower", "flower.jpg"),
+                new Item(2, "Snake", "snake.jpg"),
+                new Item(3, "Sunset", "sunset.jpg")
+            };
+
+            this.DataContext = Items;
+        }
+
+
+        private void GoToItem(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            
         }
     }
 }
