@@ -15,6 +15,8 @@ namespace TrabalhoWp7_1
             this.Id = Id;
             this.ImageUrl = ImageUrl;
             this.Name = Name;
+            this.Value = Value;
+            this.Description = Description;
         }
 
         public int Id {get; set;}
@@ -22,5 +24,9 @@ namespace TrabalhoWp7_1
         public String ImageUrl { get; set; }
 
         public String Name { get; set; }
+
+        public String Value { get; set; }
+
+        public String Description { get; set; }
     }
 }

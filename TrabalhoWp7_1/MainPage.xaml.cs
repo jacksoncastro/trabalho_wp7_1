@@ -17,11 +17,10 @@ namespace TrabalhoWp7_1
 
             this.InitializeComponent();
 
-
             var Items = new ObservableCollection<Item>() {
-                new Item(1, "Flower", "flower.jpg"),
-                new Item(2, "Snake", "snake.jpg"),
-                new Item(3, "Sunset", "sunset.jpg")
+                new Item(1, "http://www.leitecamponesa.com.br/wp-content/uploads/2015/08/produtos-leite-condensado-350x263.png", "Leite condensado 1"),
+                new Item(2, "http://www.leitecamponesa.com.br/wp-content/uploads/2015/08/produtos-leite-condensado-350x263.png", "Leite condensado 2"),
+                new Item(3, "http://www.leitecamponesa.com.br/wp-content/uploads/2015/08/produtos-leite-condensado-350x263.png", "Leite condensado 3")
             };
 
             this.DataContext = Items;
