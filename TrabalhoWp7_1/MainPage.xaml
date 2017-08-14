@@ -10,7 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView Height="200"
           ScrollViewer.HorizontalScrollMode="Enabled" 
-          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+          ScrollViewer.HorizontalScrollBarVisibility="Hidden"
           ScrollViewer.VerticalScrollMode="Disabled"
           ScrollViewer.VerticalScrollBarVisibility="Hidden"
           ItemsSource="{Binding}">
@@ -30,7 +30,7 @@
                             </Image>
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Center">
-                            <HyperlinkButton Content="{x:Bind Name}" Click="GoToItem" />
+                            <HyperlinkButton Content="{x:Bind Name}" Click="GoToItem" CommandParameter="{x:Bind Id}"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>

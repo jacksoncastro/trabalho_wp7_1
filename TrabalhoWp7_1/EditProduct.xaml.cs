@@ -22,9 +22,33 @@ namespace TrabalhoWp7_1
     /// </summary>
     public sealed partial class EditProduct : Page
     {
+        private int itemId;
+
         public EditProduct()
         {
             this.InitializeComponent();
+        }
+
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            this.itemId = Convert.ToInt32(e.Parameter);
+            var Item = ItemsManager.Items.First(item => item.Id == this.itemId);
+            this.DataContext = Item;
+        }
+
+
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
+
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }

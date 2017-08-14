@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Pivot ItemsSource="{Binding}">
+        <Pivot ItemsSource="{Binding}" Name="PivotItem">
             <Pivot.HeaderTemplate>
                 <DataTemplate x:DataType="local:Item">
                     <Grid>
@@ -30,14 +30,15 @@
                         <StackPanel Margin="20,280,0,153">
                             <StackPanel Orientation="Horizontal" Height="40">
                                 <TextBlock Text="Valor:" FontWeight="Bold" Width="55" FontSize="18" VerticalAlignment="Center"></TextBlock>
-                                <TextBlock Text="R$32,10" Foreground="#FF5C4646" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Text="R$" Foreground="#FF5C4646" FontSize="18" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Bind Value}" Foreground="#FF5C4646" FontSize="18" VerticalAlignment="Center"></TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Height="40">
                                 <TextBlock Text="Descrição:" FontWeight="Bold" Width="90" FontSize="18" VerticalAlignment="Center"></TextBlock>
                                 <TextBlock Text="{x:Bind Description}" Foreground="#FF5C4646" FontSize="18" VerticalAlignment="Center"></TextBlock>
                             </StackPanel>
                         </StackPanel>
-                        <Button Content="Editar produto" HorizontalAlignment="Center" Margin="0,380,0,0" Background="#FF286090" Foreground="White"/>
+                        <Button Content="Editar produto" Click="EditItem" CommandParameter="{x:Bind Id}" HorizontalAlignment="Center" Margin="0,380,0,0" Background="#FF286090" Foreground="White"/>
                     </Grid>
                 </DataTemplate>
             </Pivot.ItemTemplate>

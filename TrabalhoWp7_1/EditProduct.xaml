@@ -12,23 +12,23 @@
         <StackPanel Margin="20,60,20,20">
             <StackPanel Margin="20">
                 <TextBlock Text="Nome:" />
-                <TextBox Name="Name" />
+                <TextBox Name="Name" Text="{Binding Name}" />
             </StackPanel>
             <StackPanel Margin="20">
                 <TextBlock Text="Valor:" />
-                <TextBox Name="Value" />
+                <TextBox Name="Value" Text="{Binding Value}" />
             </StackPanel>
             <StackPanel Margin="20">
                 <TextBlock Text="Url da imagem:" />
-                <TextBox Name="ImageUrl" />
+                <TextBox Name="ImageUrl" Text="{Binding ImageUrl}" />
             </StackPanel>
             <StackPanel Margin="20">
                 <TextBlock Text="Descrição:" />
-                <TextBox Name="Description" Height="140" />
+                <TextBox Name="Description" Height="140" Text="{Binding Description}"/>
             </StackPanel>
             <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Content="Cancelar" VerticalAlignment="Center" Width="80" Margin="0,0,20,0" Background="#c9302c" BorderBrush="#ac2925" Foreground="White" HorizontalAlignment="Center"/>
-                <Button Content="Editar" VerticalAlignment="Center" Width="80" Background="#286090" BorderBrush="#204d74" Foreground="White"></Button>
+                <Button Content="Cancelar" VerticalAlignment="Center" Width="80" Margin="0,0,20,0" Background="#c9302c" BorderBrush="#ac2925" Foreground="White" HorizontalAlignment="Center" Click="Cancel" />
+                <Button Content="Editar" VerticalAlignment="Center" Width="80" Background="#286090" BorderBrush="#204d74" Foreground="White" Click="Edit"/>
             </StackPanel>
         </StackPanel>
     </Grid>
