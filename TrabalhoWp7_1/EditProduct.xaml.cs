@@ -23,6 +23,7 @@ namespace TrabalhoWp7_1
     public sealed partial class EditProduct : Page
     {
         private int itemId;
+        private Item currentItem;
 
         public EditProduct()
         {
@@ -35,13 +36,25 @@ namespace TrabalhoWp7_1
             base.OnNavigatedTo(e);
 
             this.itemId = Convert.ToInt32(e.Parameter);
-            var Item = ItemsManager.Items.First(item => item.Id == this.itemId);
-            this.DataContext = Item;
+            var item = ItemsManager.Items.First(itemSearch => itemSearch.Id == this.itemId);
+
+            this.currentItem = item.DeepCopy();
+
+            this.DataContext = item;
         }
+
+
 
 
         private void Cancel(object sender, RoutedEventArgs e)
         {
+            Item item = ItemsManager.Items.First(itemSearch => itemSearch.Id == this.currentItem.Id);
+
+            item.ImageUrl = this.currentItem.ImageUrl;
+            item.Name = this.currentItem.Name;
+            item.Value = this.currentItem.Value;
+            item.Description = this.currentItem.Description;
+
             this.Frame.Navigate(typeof(MainPage));
         }
 

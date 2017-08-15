@@ -19,6 +19,11 @@ namespace TrabalhoWp7_1
             this.Description = Description;
         }
 
+        public Item DeepCopy()
+        {
+            return (Item) this.MemberwiseClone();
+        }
+
         public int Id {get; set;}
 
         public String ImageUrl { get; set; }

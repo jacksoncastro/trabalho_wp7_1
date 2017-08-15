@@ -12,19 +12,19 @@
         <StackPanel Margin="20,60,20,20">
             <StackPanel Margin="20">
                 <TextBlock Text="Nome:" />
-                <TextBox Name="Name" Text="{Binding Name}" />
+                <TextBox Name="Name" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
             <StackPanel Margin="20">
                 <TextBlock Text="Valor:" />
-                <TextBox Name="Value" Text="{Binding Value}" />
+                <TextBox Name="Value" Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
             <StackPanel Margin="20">
                 <TextBlock Text="Url da imagem:" />
-                <TextBox Name="ImageUrl" Text="{Binding ImageUrl}" />
+                <TextBox Name="ImageUrl" Text="{Binding ImageUrl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
             <StackPanel Margin="20">
                 <TextBlock Text="Descrição:" />
-                <TextBox Name="Description" Height="140" Text="{Binding Description}"/>
+                <TextBox Name="Description" Height="140" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button Content="Cancelar" VerticalAlignment="Center" Width="80" Margin="0,0,20,0" Background="#c9302c" BorderBrush="#ac2925" Foreground="White" HorizontalAlignment="Center" Click="Cancel" />

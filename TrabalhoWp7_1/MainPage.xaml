@@ -8,15 +8,16 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView Height="200"
-          ScrollViewer.HorizontalScrollMode="Enabled" 
+        <ListView Height="600"
+          ScrollViewer.HorizontalScrollMode="Disabled" 
           ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-          ScrollViewer.VerticalScrollMode="Disabled"
+          ScrollViewer.VerticalScrollMode="Auto"
           ScrollViewer.VerticalScrollBarVisibility="Hidden"
-          ItemsSource="{Binding}">
+          ItemsSource="{Binding}"
+          HorizontalAlignment="Center">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <ItemsWrapGrid/>
+                    <ItemsWrapGrid Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
