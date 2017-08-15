@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -62,6 +64,27 @@ namespace TrabalhoWp7_1
         private void Edit(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void OnKeyUpValue(Object sender, KeyRoutedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+        }
+
+
+        private void OnKeyDownValue(Object sender, KeyRoutedEventArgs e)
+        {
+            if (!IsDigitKey(e.Key))
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        bool IsDigitKey(VirtualKey keyValue)
+        {
+            return ((keyValue >= VirtualKey.Number0 && keyValue <= VirtualKey.Number9) ||
+                (keyValue >= VirtualKey.NumberPad0 && keyValue <= VirtualKey.NumberPad9));
         }
     }
 }

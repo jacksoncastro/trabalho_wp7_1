@@ -16,7 +16,7 @@
             </StackPanel>
             <StackPanel Margin="20">
                 <TextBlock Text="Valor:" />
-                <TextBox Name="Value" Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox Name="Value" Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="OnKeyUpValue" KeyDown="OnKeyDownValue" />
             </StackPanel>
             <StackPanel Margin="20">
                 <TextBlock Text="Url da imagem:" />
