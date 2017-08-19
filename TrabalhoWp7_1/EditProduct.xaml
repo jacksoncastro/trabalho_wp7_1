@@ -8,32 +8,36 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Editar item" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
-        <StackPanel Margin="20,60,20,20">
-            <StackPanel Margin="20">
-                <TextBlock Text="Nome:" />
-                <TextBox Name="Name" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            </StackPanel>
-            <StackPanel Margin="20">
-                <TextBlock Text="Valor:" />
-                <TextBox Name="Value" Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="OnKeyUpValue" KeyDown="OnKeyDownValue" />
-            </StackPanel>
-            <StackPanel Margin="20">
-                <TextBlock Text="Url da imagem:" />
-                <TextBox Name="ImageUrl" Text="{Binding ImageUrl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            </StackPanel>
-            <StackPanel Margin="20">
-                <TextBlock Text="Descrição:" />
-                <TextBox Name="Description" Height="140" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            </StackPanel>
+        <ScrollViewer>
             <StackPanel>
-                <TextBlock x:Name="required" Text="* Preencha todos os campos" Foreground="Red" HorizontalAlignment="Center" Visibility="Collapsed"></TextBlock>
-                <TextBlock x:Name="invalidUrl" Text="* A url informada é inválida" Foreground="Red" HorizontalAlignment="Center" Visibility="Collapsed"></TextBlock>
+                <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Editar item" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+                <StackPanel Margin="20,60,20,20">
+                    <StackPanel Margin="20">
+                        <TextBlock Text="Nome:" />
+                        <TextBox Name="Name" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                    <StackPanel Margin="20">
+                        <TextBlock Text="Valor:" />
+                        <TextBox Name="Value" Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="OnKeyUpValue" KeyDown="OnKeyDownValue" />
+                    </StackPanel>
+                    <StackPanel Margin="20">
+                        <TextBlock Text="Url da imagem:" />
+                        <TextBox Name="ImageUrl" Text="{Binding ImageUrl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                    <StackPanel Margin="20">
+                        <TextBlock Text="Descrição:" />
+                        <TextBox Name="Description" Height="96" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock x:Name="required" Text="* Preencha todos os campos" Foreground="Red" HorizontalAlignment="Center" Visibility="Collapsed"></TextBlock>
+                        <TextBlock x:Name="invalidUrl" Text="* A url informada é inválida" Foreground="Red" HorizontalAlignment="Center" Visibility="Collapsed"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button Content="Cancelar" VerticalAlignment="Center" Width="80" Margin="0,0,20,0" Background="#c9302c" BorderBrush="#ac2925" Foreground="White" HorizontalAlignment="Center" Click="Cancel" />
+                        <Button Content="Editar" VerticalAlignment="Center" Width="80" Background="#286090" BorderBrush="#204d74" Foreground="White" Click="Edit"/>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Content="Cancelar" VerticalAlignment="Center" Width="80" Margin="0,0,20,0" Background="#c9302c" BorderBrush="#ac2925" Foreground="White" HorizontalAlignment="Center" Click="Cancel" />
-                <Button Content="Editar" VerticalAlignment="Center" Width="80" Background="#286090" BorderBrush="#204d74" Foreground="White" Click="Edit"/>
-            </StackPanel>
-        </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
