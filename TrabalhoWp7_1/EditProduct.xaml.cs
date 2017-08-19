@@ -81,7 +81,7 @@ namespace TrabalhoWp7_1
         }
 
 
-        bool IsDigitKey(VirtualKey keyValue)
+        private bool IsDigitKey(VirtualKey keyValue)
         {
             return ((keyValue >= VirtualKey.Number0 && keyValue <= VirtualKey.Number9) ||
                 (keyValue >= VirtualKey.NumberPad0 && keyValue <= VirtualKey.NumberPad9));

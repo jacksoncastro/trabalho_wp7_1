@@ -14,7 +14,9 @@
           ScrollViewer.VerticalScrollMode="Auto"
           ScrollViewer.VerticalScrollBarVisibility="Hidden"
           ItemsSource="{Binding}"
-          HorizontalAlignment="Center">
+          HorizontalAlignment="Center"
+          ItemClick="ListView_ItemClick"
+          IsItemClickEnabled="True">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <ItemsWrapGrid Orientation="Horizontal"/>
