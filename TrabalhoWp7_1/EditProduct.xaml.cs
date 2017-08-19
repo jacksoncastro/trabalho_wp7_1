@@ -63,7 +63,34 @@ namespace TrabalhoWp7_1
 
         private void Edit(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            // cleaning form
+            required.Visibility = Visibility.Collapsed;
+            invalidUrl.Visibility = Visibility.Collapsed;
+
+            Item item = ItemsManager.Items.First(itemSearch => itemSearch.Id == this.currentItem.Id);
+
+            if (!IsValidForm(item))
+            {
+                required.Visibility = Visibility.Visible;
+            } else if (!IsValidUrl(item.ImageUrl))
+            {
+                invalidUrl.Visibility = Visibility.Visible;
+            } else 
+            {
+                this.Frame.Navigate(typeof(MainPage));
+            }
+        }
+
+
+        private Boolean IsValidForm(Item item)
+        {
+            return !(String.IsNullOrEmpty(item.Name) || String.IsNullOrEmpty(item.ImageUrl) || String.IsNullOrEmpty(item.Description));
+        }
+
+
+        private Boolean IsValidUrl(string url)
+        {
+            return Uri.IsWellFormedUriString(url, UriKind.Absolute);
         }
 
         private void OnKeyUpValue(Object sender, KeyRoutedEventArgs e)
