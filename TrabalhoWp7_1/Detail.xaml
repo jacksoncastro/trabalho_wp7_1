@@ -21,11 +21,7 @@
                     <Grid>
                         <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="{x:Bind Name}" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
                         <Border HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" Width="200" Margin="0,60" BorderBrush="#ccc" BorderThickness="2">
-                            <Image>
-                                <Image.Source>
-                                    <BitmapImage UriSource="{x:Bind ImageUrl}"></BitmapImage>
-                                </Image.Source>
-                            </Image>
+                            <Image Source="{x:Bind ImageUrl}" />
                         </Border>
                         <StackPanel Margin="20,280,0,153">
                             <StackPanel Orientation="Horizontal" Height="40">

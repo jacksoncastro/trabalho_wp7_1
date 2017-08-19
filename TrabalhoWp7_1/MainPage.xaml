@@ -26,11 +26,7 @@
                 <DataTemplate x:DataType="local:Item">
                     <StackPanel>
                         <StackPanel>
-                            <Image Width="170" Height="170">
-                                <Image.Source>
-                                    <BitmapImage UriSource="{x:Bind ImageUrl}" />
-                                </Image.Source>
-                            </Image>
+                            <Image Width="170" Height="170" Source="{x:Bind ImageUrl}" />
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Center">
                             <HyperlinkButton Content="{x:Bind Name}" Click="GoToItem" CommandParameter="{x:Bind Id}"/>
